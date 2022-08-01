@@ -1,0 +1,32 @@
+.input input {
+    width: 20rem;
+    height: 2.5rem;
+    border-radius: 15px;
+
+    margin: 1rem;
+}
+
+.input input::placeholder {
+    margin: 1rem;
+    font: 100 12.5px 'Prompt', sans-serif;
+}
+
+.input button {
+    width: 10rem;
+    height: 3rem;
+    border-radius: 15px;
+
+    font: 400 15px 'Prompt', sans-serif;
+    color: white;
+
+    background-color: blueviolet;
+    border: 2px solid #1A1A1A;
+    transition: 0.3s;
+}
+
+.input button:hover {
+    background-color: #9851da;
+    transition: 0.3s;
+
+    cursor: pointer;
+}

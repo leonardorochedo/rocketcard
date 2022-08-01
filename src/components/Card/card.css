@@ -1,0 +1,76 @@
+.card {
+    position: absolute;
+    width: 23rem;
+    height: 35rem;
+
+    border-radius: 50px;
+
+    margin: 2rem 0 0 18rem;
+}
+
+.one {
+    border: 15px solid white;
+}
+
+.card img.bgImg {
+    width: 18rem;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+
+    margin: 7rem 0rem 0 5rem;
+
+    position: absolute;
+    z-index: -1;
+}
+
+.card .top {
+    display: flex;
+    align-items: center;
+
+    margin: 1rem 0 0 1.25rem;
+}
+
+.card .top img {
+    width: 2.5rem;
+    height: 2.5rem;
+
+    border: 2px solid white;
+    border-radius: 100%;
+
+    margin-right: 0.5rem;
+}
+
+.card .top h1 {
+    font: 400 24px 'Prompt', sans-serif;
+    color: white;
+}
+
+.card .infoGit {
+    width: 12rem;
+    height: 14rem;
+    margin: 13rem 0 0 1.75rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background: linear-gradient(180deg, #000000 3.65%, rgba(70, 69, 69, 0.72) 53.65%, rgba(62, 56, 56, 0.42) 100%);
+    border-radius: 50px;
+}
+
+.card .infos {
+    display: flex;
+    margin: 0 0 -1rem 1.35rem;
+}
+
+.card .infoOther {
+    margin-bottom: 0;
+}
+
+.card .infos p {
+    font: 400 16px 'Prompt', sans-serif;
+    color: white;
+}
+
+.card .infos img {
+    margin-right: 0.25rem;
+}
