@@ -5,45 +5,43 @@ export function App() {
 
   const [user, setUser] = useState({ login: '', avatar: '', followers: '', following: '', repo: '', location: '', company: '' })
 
+  useEffect(() => {
+    let button = document.querySelector('.button')
 
-  // let button = document.querySelector('.button')
-
-  // button.addEventListener("click", function(e) {
-  //   e.preventDefault()
-  //   const inputValue = document.querySelector('#input').value
-  // })
+    button.addEventListener("click", function(e) {
+      e.preventDefault()
+      const inputValue = document.querySelector('#input').value
+      const URL = `https://api.github.com/users/${inputValue}`
+      
+      fetch(URL)
+      .then(response => response.json())
+      .then(data => {
+        setUser({
+          login: data.login,
+          avatar: data.avatar_url,
+          followers: data.followers,
+          following: data.following,
+          repo: data.public_repos,
+          location: data.location,
+          company: data.company
+        })
+      })
+    }, []) })
 
     function changeColor() {
 
-      // Gerando a cor
-      const letters = '0123456789ABCDEF';
-      let color = '#';
+    // Gerando a cor
+    const letters = '0123456789ABCDEF';
+    let color = '#';
 
-      for (let i = 0; i < 6; i++) {
-      color += letters[Math. floor(Math. random() * 16)];
+    for (let i = 0; i < 6; i++) {
+    color += letters[Math. floor(Math. random() * 16)];
 
-      // Fazendo a alteração
-      document.body.style.setProperty('--border-color', color);
-      
-      }
-    } 
-  
+    // Fazendo a alteração
+    document.body.style.setProperty('--border-color', color);
 
-    useEffect(() => {
-        fetch(`https://api.github.com/users/leonardorochedo`)
-        .then(response => response.json())
-        .then(data => {
-          setUser({
-            login: data.login,
-            avatar: data.avatar_url,
-            followers: data.followers,
-            following: data.following,
-            repo: data.public_repos,
-            location: data.location,
-            company: data.company
-          })
-        })
-  }, [])
+    }
+    }
 
   return (
     <>
@@ -77,7 +75,7 @@ export function App() {
       </div>
       <div className="infos infoOther">
         <img src="src\assets\company.svg" alt="Empresa" />
-        <p>{user.company} Empresa</p>
+        <p>{user.company}</p>
       </div>
     </div>
     </div>
